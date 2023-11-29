@@ -5,7 +5,7 @@ struct node{
 	int data;
 	struct node *next;
 };
-
+//o(n)
 struct node* insertion(struct node *root , int x , int pos){
 	struct node *tmp = (struct node*)malloc(sizeof(struct node));
 	tmp->data = x;
