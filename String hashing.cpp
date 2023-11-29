@@ -30,7 +30,7 @@ int main(){
     precalc();
 
     string a , b; cin >> a >> b;
-    cout <<hashing(a)<<" "<<hashing(b);
+    hashing(a) == hashing(b) ? cout<<"strings are equal" : cout<<"strings aren't equal";
     
     return 0;
 }
