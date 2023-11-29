@@ -7,14 +7,14 @@ struct node{
     struct node *l , *r;
 };
 
-struct node *new_node(int x){
+struct node* new_node(int x){
     struct node *tmp = (struct node*)malloc(sizeof(struct node));
     tmp->val = x;
     tmp->l = NULL;
     tmp->r = NULL;
     return tmp;
 }
-struct node *insertion(struct node *root , int x){
+struct node* insertion(struct node *root , int x){
     if(root == NULL) return new_node(x);
     
     if(x > root->val)
@@ -46,7 +46,7 @@ void postorder(node *root){
     cout << root->val<<" ";
 }
 
-struct node *search(struct node *root , int x){
+struct node* search(struct node *root , int x){
     if(root == NULL || root->val == x) return root;
 
     if(x > root->val) return search(root->r , x);
