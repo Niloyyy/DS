@@ -10,27 +10,26 @@ struct node *head = NULL;
 void push(int val){
 	struct node *new_node = (struct node*)malloc(sizeof(struct node));
 	new_node->data = val;
-	if(head == NULL){
-		new_node->next = NULL;
-	}else{
-		new_node->next = head; 
-	}
+	new_node->next = head;
 	head = new_node;
 }
 
 void pop(){
-	struct node *temp;
-	if(head == NULL)
+	if(head == NULL){
 		printf("stack is empty\n");
-	else{
-		temp = head;
-		head = head->next;
+	}else{
+		struct node *temp = head;
+		head = head -> next;
+		free(temp);
 	}
-	free(temp);
 }
 
-void peak(){
-	printf("%d ", head->data);
+int top(){
+	return head->data;
+}
+
+void show_top(){
+	printf("%d" , head->data);
 }
 
 void print_stack(){
@@ -55,8 +54,7 @@ int main(){
 	pop();
 	print_stack();
 	printf("\n");
-	peak();
+	show_top();
 	
 
-	return 0;
 }
